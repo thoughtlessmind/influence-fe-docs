@@ -1,12 +1,12 @@
-import React from 'react';
-import Demo from './containers/Demo'
+import React from "react"
+import MainContainer from "./containers/MainContainer"
 
 function App() {
-  return (
-    <div className="App">
-      <Demo/>
-    </div>
-  );
+	return (
+		<div className="App">
+			<MainContainer />
+		</div>
+	)
 }
 
-export default App;
+export default App
