@@ -1,7 +1,7 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
+import React from "react"
+import { Switch, Route } from "react-router-dom"
 
-import { Typography } from "../components";
+import { Typography, Button, Table, Pills } from "../components"
 
 // Each logical "route" has two components, one for
 // the sidebar and one for the main area. We want to
@@ -13,34 +13,39 @@ import { Typography } from "../components";
 // content section. All routes are in the same
 // order they would appear in a <Switch>.
 
-const Home = () => <h1>Homffe</h1>;
+const Home = () => <h1>Homffe</h1>
+
+const Test = () => <h1>Tesstin</h1>
 
 const routes = [
-  {
-    path: "/",
-    exact: true,
-    sidebar: () => <div>home!</div>,
-    main: Home
-  },
-  {
-    path: "/bubblegum",
-    sidebar: () => <div>bubblegum!</div>,
-    main: () => <h2>Bubblegum</h2>
-  },
-  {
-    path: "/shoelaces",
-    sidebar: () => <div>shoelaces!</div>,
-    main: () => <h2>Shoelaces</h2>
-  }
-];
+	{
+		path: "/",
+		exact: true,
+		sidebar: () => <div>home!</div>,
+		main: Home
+	},
+	{
+		path: "/bubblegum",
+		sidebar: () => <div>bubblegum!</div>,
+		main: () => <h2>Bubblegum</h2>
+	},
+	{
+		path: "/shoelaces",
+		sidebar: () => <div>shoelaces!</div>,
+		main: () => <h2>Shoelaces</h2>
+	}
+]
 
 export default function Routes() {
-  return (
-    <div>
-      <Switch>
-        <Route path={"/typography"} component={Typography} />
-        <Route exact path={"/"} component={Home} />
-      </Switch>
-    </div>
-  );
+	return (
+		<div>
+			<Switch>
+				<Route path={"/table"} component={Table} />
+				<Route path={"/pills"} component={Pills} />
+				<Route path={"/typography"} component={Typography} />
+				<Route path={"/buttons"} component={Button} />
+				<Route exact path={"/"} component={Home} />
+			</Switch>
+		</div>
+	)
 }

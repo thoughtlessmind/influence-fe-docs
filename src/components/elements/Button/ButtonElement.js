@@ -4,7 +4,8 @@ import Button from "@material-ui/core/Button"
 const ButtonElement = () => {
 	return (
 		<div>
-			<Button>Button 1</Button>
+			<Button variant="contained">Primary Button</Button>
+			<Button variant="outlined">Outlied Button</Button>
 		</div>
 	)
 }

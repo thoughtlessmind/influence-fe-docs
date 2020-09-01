@@ -11,31 +11,31 @@ import { Link } from "react-router-dom"
 
 const drawerWidth = 240
 
-function TabPanel(props) {
-	const { children, value, index, ...other } = props
+// function TabPanel(props) {
+// 	const { children, value, index, ...other } = props
 
-	return (
-		<div
-			role="tabpanel"
-			hidden={value !== index}
-			id={`vertical-tabpanel-${index}`}
-			aria-labelledby={`vertical-tab-${index}`}
-			{...other}
-		>
-			{value === index && (
-				<Box p={3}>
-					<Typography>{children}</Typography>
-				</Box>
-			)}
-		</div>
-	)
-}
+// 	return (
+// 		<div
+// 			role="tabpanel"
+// 			hidden={value !== index}
+// 			id={`vertical-tabpanel-${index}`}
+// 			aria-labelledby={`vertical-tab-${index}`}
+// 			{...other}
+// 		>
+// 			{value === index && (
+// 				<Box p={3}>
+// 					<Typography>{children}</Typography>
+// 				</Box>
+// 			)}
+// 		</div>
+// 	)
+// }
 
-TabPanel.propTypes = {
-	children: PropTypes.node,
-	index: PropTypes.any.isRequired,
-	value: PropTypes.any.isRequired
-}
+// TabPanel.propTypes = {
+// 	children: PropTypes.node,
+// 	index: PropTypes.any.isRequired,
+// 	value: PropTypes.any.isRequired
+// }
 
 function a11yProps(index) {
 	return {
@@ -95,6 +95,9 @@ export default function SideDrawer(props) {
 					onChange={handleChange}
 					aria-label="Vertical tabs example"
 					className={classes.tabs}
+					textColor="primary"
+					indicatorColor="primary"
+					// action
 				>
 					<Tab component={Link} to={"/"} label="Home" {...a11yProps(0)} />
 					<Tab
@@ -109,7 +112,7 @@ export default function SideDrawer(props) {
 						label="Buttons"
 						{...a11yProps(2)}
 					/>
-					<Tab component={Link} to={"/"} label="Inputs" {...a11yProps(3)} />
+					<Tab component={Link} to={"/table"} label="Table" {...a11yProps(3)} />
 					<Tab component={Link} to={"/"} label="Dropdown" {...a11yProps(4)} />
 					<Tab
 						component={Link}
@@ -118,6 +121,7 @@ export default function SideDrawer(props) {
 						{...a11yProps(5)}
 					/>
 					<Tab component={Link} to={"/"} label="Modal" {...a11yProps(6)} />
+					<Tab component={Link} to={"/pills"} label="Pills" {...a11yProps(6)} />
 				</Tabs>
 			</Drawer>
 		</div>

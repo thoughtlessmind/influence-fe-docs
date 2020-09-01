@@ -2,13 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import classNames from "classnames"
 import { withStyles } from "@material-ui/core/styles"
-import Drawer from "@material-ui/core/Drawer"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
-import { Button, ListItem } from "@material-ui/core"
 import Routes from "../routes"
 import SideDrawer from "../components/SideDrawer/SideDrawer"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
@@ -29,23 +27,10 @@ const styles = theme => ({
 		marginLeft: 12,
 		marginRight: 20
 	},
-	drawerPaper: {
-		position: "fixed",
-		width: drawerWidth,
-		borderRadius: 0,
-		borderTop: "none",
-		borderBottom: "none",
-		top: theme.spacing(8), // push content down to fix scrollbar position
-		height: `calc(100% - ${theme.spacing(8)}px)` // subtract appbar height
-	},
-	drawerContent: {
-		overflow: "auto",
-		display: "flex",
-		flexDirection: "column"
-	},
 	contentWrapper: {
 		overflow: "auto",
 		position: "fixed",
+		width: "100%",
 		top: theme.spacing.unit * 8,
 		height: "calc(100% - 64px)", // Subtract width of header
 		backgroundColor: theme.palette.background.default,
@@ -65,13 +50,6 @@ const styles = theme => ({
 	},
 	content: {
 		padding: theme.spacing(3)
-	},
-	logoutContainer: {
-		marginTop: "auto",
-		paddingBottom: "0",
-		position: "fixed",
-		width: drawerWidth,
-		bottom: 0
 	}
 })
 
